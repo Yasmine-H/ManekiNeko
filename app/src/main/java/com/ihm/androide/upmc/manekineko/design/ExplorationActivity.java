@@ -27,6 +27,6 @@ public class ExplorationActivity extends AppCompatActivity {
         fragmentTransaction.add(R.id.mealsLayout, meals_fragment);
         fragmentTransaction.commit();
 
-        
+
     }
 }
