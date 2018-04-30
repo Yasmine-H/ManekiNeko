@@ -14,8 +14,9 @@ public class Meal {
     private String description;
     private ArrayList<String> tagList;
 
+    /*
     public Meal(String name, String description, ArrayList<String> tagList){
-        this(new Generator().generateMealId(), name, null, description, tagList);
+        this(name, null, description, tagList);
     }
 
     public Meal(String name, String photo, String description, ArrayList<String> tagList){
@@ -29,7 +30,7 @@ public class Meal {
         this.description=description;
         this.tagList=tagList;
     }
-
+    */
     public String getName(){
         return name;
     }

@@ -1,7 +1,5 @@
 package com.ihm.androide.upmc.manekineko.database;
 
-import android.util.ArrayMap;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,78 +9,68 @@ import java.util.Map;
 
 public class User {
 
-    private long id;
     private String name;
-    private String password;
     private String email;
+    private String unique_id;
+    private String password;
+    private String old_password;
+    private String new_password;
     private String photo;
     private Map<Meal, Integer> favoriteMeals;
 
-    public User(String name, String password){
-        //this(new Generator().generateUserId(), name, password, null, null, new HashMap<Meal, Integer>());
-        this(0, name, password, null, null, new HashMap<Meal, Integer>());
-    }
 
-    public User(String name, String password, String email){
-        //this(new Generator().generateUserId(), name, password, email, null, new HashMap<Meal, Integer>());
-        this(0, name, password, email, null, new HashMap<Meal, Integer>());
-    }
-
-    public User(String name, String password, String email, String photo){
-        this(0, name, password, email, photo, new HashMap<Meal, Integer>());
-    }
-    public User(long id, String name, String password, String email, String photo, Map<Meal, Integer> favoriteMeals){
-        this.name = name;
-        this.password = password;
-        this.id = id;
-        this.email = email;
-        this.photo = photo;
-        this.favoriteMeals = favoriteMeals;
-    }
-
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public String getPassword(){
-        return password;
-    }
-
-    public String getEmail(){
+    public String getEmail() {
         return email;
     }
 
-    public String getPhoto(){
-        return photo;
-    }
-
-    public long getId(){
-        return id;
+    public String getUnique_id() {
+        return unique_id;
     }
 
     public Map<Meal, Integer> getFavoriteMealsMeals(){
         return favoriteMeals;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
-        //update database ?
     }
 
-    public void setPhoto(String photo){
-        this.photo=photo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setEmail(String email){
-        this.email=email;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setOld_password(String old_password) {
+        this.old_password = old_password;
+    }
+
+    public void setNew_password(String new_password) {
+        this.new_password = new_password;
+    }
+
+    public String toString(){
+        return  "id : "+unique_id+
+                "name : "+name+
+                "password : "+password+
+                "email : "+email+
+                "photo : "+photo;//+
+                //"favorite meals : "+username; //TODO
     }
 
     public void addFavoriteMeal(Meal meal, int stars){
         favoriteMeals.put(meal, stars);
     }
 
+    /*
     public boolean checkUserValidity(){
-        if(name != null && name.length()>=3){
+        if(username != null && username.length()>=3){
             if(password!=null && password.length()>=8){
                 if(email==null){
                     return true;
@@ -99,5 +87,5 @@ public class User {
 
         return false;
     }
-
+    */
 }

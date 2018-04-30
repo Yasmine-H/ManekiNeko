@@ -78,11 +78,11 @@
                 android:onClick="newUser"/>
 
             <Button
-                android:id="@+id/show"
+                android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Show"
-                android:onClick="showUserList"/>
+                android:text="Login"
+                android:onClick="login"/>
         </LinearLayout>
 
         <LinearLayout
