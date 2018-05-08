@@ -57,18 +57,17 @@ public class MealsLoader {
         askForMealsOfType(Constants.firstCourse, mealResultCallback);
     }
 
-    public void getMainCourseList(MealResultCallback mealResultCallback){
+    public void askForMainCourseList(MealResultCallback mealResultCallback){
         askForMealsOfType(Constants.mainCourse, mealResultCallback);
     }
 
-    public void getDessertList(MealResultCallback mealResultCallback){
+    public void askForDessertList(MealResultCallback mealResultCallback){
         askForMealsOfType(Constants.dessert, mealResultCallback);
     }
 
-    public void getDrinkList(MealResultCallback mealResultCallback){
+    public void askForDrinkList(MealResultCallback mealResultCallback){
         askForMealsOfType(Constants.drink, mealResultCallback);
     }
-
 
     public void askForMealsOfType(String type, final MealResultCallback mealResultCallback){
 
@@ -146,6 +145,75 @@ public class MealsLoader {
         //
     }
 
+    public void askForAllMeals(final MealResultCallback mealResultCallback){
+        meals = null;
+        Call<ServerMealResponse> response = requestInterface.fetchAllMeals(Constants.FETCH_MEALS_OPERATION);
+        Log.d(getClass().getName(), "Loading data...");
+        response.enqueue(new Callback<ServerMealResponse>() {
+            @Override
+            public void onResponse(Call<ServerMealResponse> call, retrofit2.Response<ServerMealResponse> response) {
+
+                ServerMealResponse resp = response.body();
+
+                Log.d(getClass().getName(),resp.getMessage()+" and value : ");
+                //ArrayList<Meal> meals;
+                if(resp != null)
+                {
+                    Log.d(getClass().getName(),resp.getMessage());//+resp.getMeals().size());
+
+                    //saveMeals(resp.getMeals());
+
+                    meals = resp.getMeals();
+                    if(meals == null){
+                        Log.d(getClass().getName(),"\nnull returned");
+                    }
+                    else {
+                        Log.d(getClass().getName(),"\nnumber of results : "+meals.size());
+                        for (Meal meal : meals) {
+                            Log.d(getClass().getName(),"\nmeal : " + meal.getName()+" type : "+meal.getType());
+                        }
+
+
+                        /*ImageView imageView = findViewById(R.id.imageView);
+                        String[] photo = meals.get(0).getPhoto().split("\\\\");
+
+                        userInfoView.append("\n"+photo);
+                        Resources resources = getBaseContext().getResources();
+                        final int resourceId = resources.getIdentifier(photo[1], photo[0],
+                                getBaseContext().getPackageName());
+                        imageView.setImageResource(resourceId);
+                        */
+                    }
+
+                }
+
+                else
+                {
+                    Log.d(getClass().getName(),"resp is null");
+                    //errorMsg("null");
+                }
+                //Snackbar.make(getView(), , Snackbar.LENGTH_LONG).show();
+                //progress.setVisibility(View.INVISIBLE);
+                //done = true;
+                mealResultCallback.onSuccess(meals);
+
+            }
+
+            @Override
+            public void onFailure(Call<ServerMealResponse> call, Throwable t) {
+
+                //progress.setVisibility(View.INVISIBLE);
+                Log.d(Constants.TAG,"failed "+t.getMessage());
+                t.printStackTrace();
+                Log.d(getClass().getName(),t.getLocalizedMessage());
+                //Snackbar.make(getView(), t.getLocalizedMessage(), Snackbar.LENGTH_LONG).show();
+                //done = true;
+                //errorMsg(t.getLocalizedMessage());
+                mealResultCallback.onError(t);
+            }
+        });
+
+    }
     /*
     private void saveMeals(ArrayList<Meal> meals) {
         this.meals = meals;
