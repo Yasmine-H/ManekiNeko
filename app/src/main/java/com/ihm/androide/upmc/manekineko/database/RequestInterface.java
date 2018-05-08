@@ -2,7 +2,9 @@ package com.ihm.androide.upmc.manekineko.database;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 /**
  * Created by HAMDANI on 29/04/2018.
@@ -10,7 +12,26 @@ import retrofit2.http.POST;
 
 public interface RequestInterface {
 
-    @POST("posts/")
+    //@POST("posts/")
+    @POST("meals/")
     //@POST("ManekiNeko/")
-    Call<ServerResponse> operation(@Body ServerRequest request);
+    Call<ServerUserResponse> operation(@Body ServerUserRequest request);
+
+    /*@POST("meals/")
+        //@POST("ManekiNeko/")
+    Call<ServerMealResponse> operation(@Body ServerMealRequest request);
+    */
+    @GET("meals/")
+        //@POST("ManekiNeko/")
+    Call<ServerMealResponse> fetchAllMeals(@Query("method") String method);
+
+    @GET("meals/")
+        //@POST("ManekiNeko/")
+    Call<ServerMealResponse> fetchMealsOfType(@Query("method") String method,
+                                @Query("type") String type);
+/*
+    @GET("meals/")
+        //@POST("ManekiNeko/")
+    Call<ServerUserResponse> operation();
+*/
 }

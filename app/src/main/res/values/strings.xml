@@ -4,4 +4,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_all_users">AllUsersActivity</string>
+    <string name="welcomeText">Okaidinasai !
+        \nEnter your info to login/create an account and get personalized content (history, your own data...)</string>
+    <string name="usernameText">Enter a username to create a new account or just have a personalized name around the table (pass)</string>
+    <string name="passwordText">Enter your password to login or create a new account</string>
+    <string name="emailText">Enter your email to login to your account or create one</string>
+    <string name="missingInfo_Title">Missing info</string>
+    <string name="loginText">You must specify an email and password to login to your account</string>
+    <string name="registerText">You must specify an email, password and username to create a new account</string>
+    <string name="passText">You must specify a username to pass</string>
 </resources>

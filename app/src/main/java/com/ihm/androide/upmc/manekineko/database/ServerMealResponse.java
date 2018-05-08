@@ -1,14 +1,15 @@
 package com.ihm.androide.upmc.manekineko.database;
 
+import java.util.ArrayList;
+
 /**
- * Created by HAMDANI on 29/04/2018.
+ * Structure of a response (meals) received from the server after sending a request
  */
 
-public class ServerResponse {
-
+class ServerMealResponse {
     private String result;
     private String message;
-    private User user;
+    private ArrayList<Meal> meals;
 
     public String getResult() {
         return result;
@@ -18,7 +19,8 @@ public class ServerResponse {
         return message;
     }
 
-    public User getUser() {
-        return user;
+    public ArrayList<Meal> getMeals() {
+        return meals;
     }
+
 }

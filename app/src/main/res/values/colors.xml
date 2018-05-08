@@ -3,5 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorPinkyLight">#cffcbbd2</color>
+    <color name="colorPinkyPurple">#892448</color>
     <color name="colorWhite">#c6ffffff</color>
 </resources>
