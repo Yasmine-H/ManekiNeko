@@ -17,23 +17,24 @@
 
         <activity android:name=".design.WelcomeActivity">
 
-            <!--
+        </activity>
+        <activity android:name=".design.ExplorationActivity" />
+        <activity android:name=".database.UserConnectionActivity">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
-        </activity>
-        <activity android:name=".design.ExplorationActivity" />
-        <activity android:name=".database.UserConnectionActivity">
 
         </activity>
-        <activity android:name=".design.AppetizerActivity"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".design.AppetizerActivity">
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        </activity>
+        <activity android:name=".design.OrderActivity">
+
+        </activity>
     </application>
 
 </manifest>

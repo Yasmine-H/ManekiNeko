@@ -1,6 +1,7 @@
 package com.ihm.androide.upmc.manekineko.database;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
 import android.support.v7.app.AlertDialog;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.ihm.androide.upmc.manekineko.R;
+import com.ihm.androide.upmc.manekineko.design.OrderActivity;
 
 
 import java.io.IOException;
@@ -41,6 +43,7 @@ public class UserConnectionActivity extends AppCompatActivity {
         userInfoView.setText(getString(R.string.welcomeText));
     }
 
+    /*
     public void fetchMeals(View view) {
         userInfoView.setText("Loading data...");
         MealsLoader mealsLoader = new MealsLoader();
@@ -141,10 +144,10 @@ public class UserConnectionActivity extends AppCompatActivity {
 
             }
         });
-  */
-    }
 
-    private void registerProcess(String name, String email,String password){
+    }
+*/
+    private void registerProcess(String name, final String email, String password){
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
@@ -153,7 +156,7 @@ public class UserConnectionActivity extends AppCompatActivity {
 
         RequestInterface requestInterface = retrofit.create(RequestInterface.class);
 
-        User user = new User();
+        final User user = new User();
         user.setName(name);
         user.setEmail(email);
         user.setPassword(password);
@@ -171,6 +174,14 @@ public class UserConnectionActivity extends AppCompatActivity {
                 if(resp != null)
                 {
                     userInfoView.setText(resp.getMessage());
+                    if(resp.getResult().equals(Constants.SUCCESS))
+                    {
+                        connect(user);
+                    }
+                    else
+                    {
+                        userInfoView.setText("Error : "+resp.getMessage());
+                    }
                 }
                 else
                 {
@@ -208,12 +219,20 @@ public class UserConnectionActivity extends AppCompatActivity {
             //progress.setVisibility(View.VISIBLE);
             registerProcess(username,email,password);
 
+
         } else {
             showErrorDialog(getString(R.string.missingInfo_Title), getString(R.string.registerText));
             //userInfoView.setText("Fields are empty ! "+username+" mdp : "+password+" email : "+email);
             //Snackbar.make(getView(), "Fields are empty !", Snackbar.LENGTH_LONG).show();
         }
 
+    }
+
+    private void connect(User user) {
+        Intent myIntent = new Intent(UserConnectionActivity.this, OrderActivity.class);
+        myIntent.putExtra("user", user); //Optional parameters
+        UserConnectionActivity.this.startActivity(myIntent);
+        //userInfoView.setText(user.toString());
     }
 
     public void login(View view) {
@@ -273,7 +292,12 @@ public class UserConnectionActivity extends AppCompatActivity {
                         editor.apply();
                         goToProfile();
                         */
-                        userInfoView.append("successfully logged !");
+                        connect(resp.getUser());
+                        userInfoView.append("\nsuccessfully logged !");
+                    }
+                    else
+                    {
+                        userInfoView.setText(resp.getMessage());
                     }
                     //progress.setVisibility(View.INVISIBLE);
                 }
@@ -344,7 +368,7 @@ public class UserConnectionActivity extends AppCompatActivity {
         }
         else
         {
-            //launch activity
+            connect(new User(username));
         }
 
     }

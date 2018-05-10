@@ -58,6 +58,29 @@ android:orientation="vertical" >
                 android:paddingTop="5dp"
                 android:layout_weight="1"/>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/addMeal_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ajouter au carnet"
+                android:onClick="addToOrderList"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/suggest_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="suggesToFriend"
+                android:text="Suggérer" />
+
 
         </LinearLayout>
     </LinearLayout>

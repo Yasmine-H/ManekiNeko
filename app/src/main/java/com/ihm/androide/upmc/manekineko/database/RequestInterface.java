@@ -29,6 +29,8 @@ public interface RequestInterface {
         //@POST("ManekiNeko/")
     Call<ServerMealResponse> fetchMealsOfType(@Query("method") String method,
                                 @Query("type") String type);
+    @GET("meals/")
+    Call<ServerTagResponse> fetchAllTags(@Query("method") String method);
 /*
     @GET("meals/")
         //@POST("ManekiNeko/")

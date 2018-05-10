@@ -17,6 +17,7 @@ public class Constants {
     public static final String LOGIN_OPERATION = "login";
     public static final String CHANGE_PASSWORD_OPERATION = "chgPass";
     public static final String FETCH_MEALS_OPERATION = "fetchMeals";
+    public static final String FETCH_TAGS_OPERATION = "fetchAllTags";
     public static final String FETCH_MEALS_OF_TYPE_OPERATION = "fetchMealsOfType";
     public static final String GET_MEAL_OPERATION = "getMeal";
 

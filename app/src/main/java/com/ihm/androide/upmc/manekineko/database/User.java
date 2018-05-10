@@ -1,5 +1,6 @@
 package com.ihm.androide.upmc.manekineko.database;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,7 +8,8 @@ import java.util.Map;
  * Created by HAMDANI on 28/04/2018.
  */
 
-public class User {
+public class User implements Serializable{
+
 
     private String name;
     private String email;
@@ -19,6 +21,19 @@ public class User {
     private Map<Meal, Integer> favoriteMeals;
 
 
+    public User(){
+        name = "";
+        email = "";
+    }
+
+    public User(String name){
+        this.name=name;
+    }
+
+    public User(String name, String email){
+        this.name=name;
+        this.email=email;
+    }
     public String getName() {
         return name;
     }

@@ -13,4 +13,16 @@
     <string name="loginText">You must specify an email and password to login to your account</string>
     <string name="registerText">You must specify an email, password and username to create a new account</string>
     <string name="passText">You must specify a username to pass</string>
+
+
+    <string-array name="meals_arrays">
+        <item>Appetizer</item>
+        <item>United States</item>
+        <item>Indonesia</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+    </string-array>
 </resources>
