@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     android:id="@+id/custom_toolbar"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:orientation="horizontal"
-    android:layout_gravity="end"
-    android:paddingLeft="30dp"
+
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
 
@@ -16,19 +15,22 @@
 
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingRight="10dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:layout_alignParentStart="true"
             >
             <TextView
                 android:id="@+id/username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
                 android:text="Username"
-                android:drawableRight="@mipmap/username_icon"
+                android:drawableLeft="@drawable/maneki_neko_pixel"
                 android:gravity="center_vertical"
-                android:drawablePadding="15dp"
-
+                android:drawablePadding="5dp"
+                android:paddingStart="10dp"
+                android:textStyle="bold"
+                android:paddingRight="20dp"
 
                 />
 
@@ -39,21 +41,20 @@
 
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical">
+            android:layout_gravity="center_vertical"
+            android:layout_alignParentEnd="true">
 
             <ImageButton
-                android:src="@drawable/icons_notebook"
+                android:id="@+id/notebook_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/notebook_button"
-                android:backgroundTint="@color/colorPrimary"
-                android:onClick="addToOrderList"
                 android:layout_gravity="center_vertical"
-                android:paddingLeft="40dp"
-                />
+                android:backgroundTint="@color/colorPrimary"
+                android:onClick="displayCart"
+                android:src="@drawable/icons_notebook" />
 
 
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

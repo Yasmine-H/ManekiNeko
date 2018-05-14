@@ -15,25 +15,20 @@
 
         <!-- android:roundIcon="@mipmap/ic_launcher_round" -->
 
-        <activity android:name=".design.WelcomeActivity">
-
-        </activity>
+        <activity android:name=".design.WelcomeActivity"></activity>
         <activity android:name=".design.ExplorationActivity" />
-        <activity android:name=".database.UserConnectionActivity">
-        </activity>
-        <activity android:name=".design.AppetizerActivity">
-
-        </activity>
-        <activity android:name=".design.OrderActivity">
-
+        <activity
+            android:name=".database.UserConnectionActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
+        <activity android:name=".design.AppetizerActivity"></activity>
+        <activity android:name=".design.OrderActivity"></activity>
+        <activity android:name=".design.CartActivity"></activity>
     </application>
 
 </manifest>

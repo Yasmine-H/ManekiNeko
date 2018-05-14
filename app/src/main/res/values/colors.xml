@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#b9541a</color>
+    <color name="colorPrimaryDark">#12100f</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPinkyLight">#affcbbd2</color>
     <color name="colorPinkyPurple">#892448</color>
     <color name="colorWhite">#c6ffffff</color>
     <color name="colorGreen">#d0025605</color>
-    <color name="colorAddBackground">#d0222522</color>
+    <color name="emailText">#ffffff</color>
+    <color name="usernameText">#ffffff</color>
+    <color name="colorAddBackground">#b9541a</color>
+    <color name="colorDarkBackground">#d0222522</color>
+    <color name="colorTag">#b3ffffff</color>
+    <color name="white_opaque">#FFFFFFFF</color>
+    <color name="dark_filter">#b6000000</color>
 </resources>

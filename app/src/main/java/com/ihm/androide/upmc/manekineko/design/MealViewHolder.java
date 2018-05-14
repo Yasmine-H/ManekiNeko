@@ -60,6 +60,7 @@ public class MealViewHolder extends RecyclerView.ViewHolder {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                OrderActivity.addToOrderList(currentMeal);
 
             }
         });

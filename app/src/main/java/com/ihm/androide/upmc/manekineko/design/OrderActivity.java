@@ -1,11 +1,14 @@
 package com.ihm.androide.upmc.manekineko.design;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -15,6 +18,7 @@ import com.ihm.androide.upmc.manekineko.database.Meal;
 import com.ihm.androide.upmc.manekineko.database.MealResultCallback;
 import com.ihm.androide.upmc.manekineko.database.MealsLoader;
 import com.ihm.androide.upmc.manekineko.database.User;
+import com.ihm.androide.upmc.manekineko.database.UserConnectionActivity;
 
 import java.util.ArrayList;
 
@@ -30,9 +34,10 @@ public class OrderActivity extends AppCompatActivity {
     ArrayList<Meal> mealsList;
     Activity context;
  //   Spinner mealTypesSpinner;
-    User user;
+ static User user;
     ArrayList<Meal> orderList;
     ListView categoryListView;
+    ImageButton cart_button;
 
 
 
@@ -46,6 +51,9 @@ public class OrderActivity extends AppCompatActivity {
         context = this;
         //mealTypesSpinner = findViewById(R.id.mealTypeSpinner);
         user = (User) getIntent().getSerializableExtra("user");
+
+
+
 /*
         Toolbar toolbar = findViewById(R.id.custom_toolbar);
         setSupportActionBar(toolbar);
@@ -65,7 +73,7 @@ public class OrderActivity extends AppCompatActivity {
         actionBar.setCustomView(actionBarLayout);
 
         TextView username_view = findViewById(R.id.username);
-//        username_view.setText(user.getName());
+        username_view.setText(user.getName());
 
 //        userInfoView.setText(user.getName());
 /*
@@ -97,10 +105,6 @@ public class OrderActivity extends AppCompatActivity {
                         if (meals == null) {
                             //userInfoView.setText("Error Loading data");
                         } else {
-
-
-
-
 
                             ArrayList<Meal> mealsList_copy = new ArrayList<>(meals);
                             ArrayList<ArrayList<Meal>> category_meals_list = new ArrayList<>();
@@ -179,12 +183,18 @@ public class OrderActivity extends AppCompatActivity {
         });
 
     }
-
 */
+
+
+
     public static void addToOrderList(Meal meal) {
 
-        user.add
+       user.getOrder().add(meal);
+        Log.d("getOrder", "new meal added : "+meal.getName());
     }
+
+
+
 
     public void suggesToFriend(View view) {
     }
@@ -199,4 +209,13 @@ public class OrderActivity extends AppCompatActivity {
 
         return -1;
     }
+
+
+    public void displayCart(View view){
+        Intent myIntent = new Intent(OrderActivity.this, CartActivity.class);
+        myIntent.putExtra("user", user); //Optional parameters
+        OrderActivity.this.startActivity(myIntent);
+
+    }
+
 }

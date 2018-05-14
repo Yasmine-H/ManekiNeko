@@ -7,11 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ihm.androide.upmc.manekineko.R;
+import com.ihm.androide.upmc.manekineko.design.CartActivity;
+import com.ihm.androide.upmc.manekineko.design.OrderActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,9 +34,9 @@ public class MealListAdapter2 extends ArrayAdapter {
         this.meals = meals;
     }
 
-    public View getView(int position, View view, ViewGroup parent) {
+    public View getView(final int position, View view, ViewGroup parent) {
         LayoutInflater inflater=context.getLayoutInflater();
-        View rowView=inflater.inflate(R.layout.meal_list, null,true);
+        View rowView=inflater.inflate(R.layout.meal_view, null,true);
 
         if(meals.get(position)!=null)
         {
@@ -41,8 +44,17 @@ public class MealListAdapter2 extends ArrayAdapter {
             ImageView imageView = (ImageView) rowView.findViewById(R.id.meal_image);
             TextView extratxt = (TextView) rowView.findViewById(R.id.meal_description);
             TextView pricetxt = rowView.findViewById(R.id.meal_price);
+            ImageButton remove_button = rowView.findViewById(R.id.remove_meal);
             //TextView tagstxt = rowView.findViewById(R.id.mealTags);
 
+            final int pos = position;
+
+            remove_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    CartActivity.removeFromOrderList(meals.get(pos));
+                }
+            });
             //add the photo
             String[] photo = meals.get(position).getPhoto().split("\\\\");
             if(photo.length==2)

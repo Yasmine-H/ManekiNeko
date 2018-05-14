@@ -4,11 +4,13 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 
+import java.io.Serializable;
+
 /**
  * Created by HAMDANI on 28/04/2018.
  */
 
-public class Meal {
+public class Meal implements Serializable{
 
     private int id;
     private String name;
@@ -21,7 +23,7 @@ public class Meal {
     private int totalVotes;
     private int nbVotes;
     private String type;
-    Bitmap bitmap;
+    private transient  Bitmap bitmap;
 /*
 CREATE TABLE edamameTags(sno int(11) NOT NULL AUTO_INCREMENT,
                         ref int(11) UNIQUE,

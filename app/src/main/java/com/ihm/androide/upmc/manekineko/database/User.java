@@ -103,6 +103,10 @@ public class User implements Serializable{
             order.remove(i);
         }
     }
+
+    public ArrayList<Meal> getOrder(){
+        return this.order;
+    }
     /*
     public boolean checkUserValidity(){
         if(username != null && username.length()>=3){

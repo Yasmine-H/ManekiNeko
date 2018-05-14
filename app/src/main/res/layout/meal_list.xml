@@ -3,11 +3,15 @@
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
 android:orientation="vertical"
-    android:paddingRight="10dp">
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    android:layout_marginRight="20dp"
+    android:background="@drawable/meal_corner"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    android:paddingBottom="10dp"
+    >
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="40dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -27,12 +31,13 @@ android:orientation="vertical"
                         android:id="@+id/meal_name"
                         android:layout_width="200dp"
                         android:layout_height="70dp"
-                        android:textSize="25sp"
+                        android:textSize="20sp"
                         android:layout_weight="2"
                         android:layout_marginBottom="5dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginTop="10dp"
+                        android:textColor="@color/colorWhite"
                         android:text="GGGGG"/>
 
                         <TextView
@@ -47,6 +52,7 @@ android:orientation="vertical"
                             android:layout_marginTop="10dp"
                             android:layout_weight="1"
                             android:gravity="end"
+                            android:textColor="@color/colorWhite"
                             android:text="tttt"/>
             </LinearLayout>
 
@@ -73,7 +79,8 @@ android:orientation="vertical"
                     android:elevation="@dimen/fab_margin"
                     android:layout_marginEnd="10dp"
                     android:layout_marginTop="4dp"
-                    android:src="@drawable/icon_add" />
+                    android:src="@drawable/icon_add"
+                    android:onClick="addOrder"/>
 
                     <LinearLayout
                         android:id="@+id/general_info_layout"
@@ -90,8 +97,11 @@ android:orientation="vertical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="10sp"
+                            android:background="@color/colorTag"
+                            android:textColor="@color/colorDarkBackground"
                             android:gravity="end"
                             />
+
 
                     </LinearLayout>
                 </RelativeLayout>
@@ -104,12 +114,14 @@ android:orientation="vertical"
         android:id="@+id/meal_description"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:textSize="15sp" />
-        <Space
+        android:textSize="15sp"
+        android:textColor="@color/colorWhite"
+            android:paddingTop="5dp"
+            android:text="hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"/>
+
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="40dp" />
-
-
+        android:layout_height="20dp" />
     </LinearLayout>
 <!--
 <TextView

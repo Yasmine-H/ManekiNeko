@@ -7,8 +7,8 @@
         android:id="@+id/mealTagView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPinkyLight"
-        android:textColor="@color/colorPinkyPurple"
+        android:background="@color/colorTag"
+        android:textColor="@color/colorDarkBackground"
         android:paddingEnd="5dp"
         android:paddingLeft="5dp"
         android:text="TextView" />
