@@ -1,6 +1,8 @@
 package com.ihm.androide.upmc.manekineko.database;
 
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 
 /**
  * Created by HAMDANI on 28/04/2018.
@@ -12,12 +14,14 @@ public class Meal {
     private String name;
     private float price;
     private String photo;
+    //private Drawable drawable;
     private String description;
     //private ArrayList<String> tagList;
     private String[] tagList;
     private int totalVotes;
     private int nbVotes;
     private String type;
+    Bitmap bitmap;
 /*
 CREATE TABLE edamameTags(sno int(11) NOT NULL AUTO_INCREMENT,
                         ref int(11) UNIQUE,
@@ -177,6 +181,8 @@ public function fetchAllMeals() {
         this.totalVotes=totalVotes;
         this.nbVotes=nbVotes;
         this.type=type;
+        this.bitmap = null;
+
     }
 
     public String getName(){
@@ -195,6 +201,14 @@ public function fetchAllMeals() {
         return type;
     }
 
+
+    public void setBitmap(Bitmap bitmap){
+        Log.d(getClass().getName(), "meal ===================" + name);
+        this.bitmap =bitmap ;
+    }
+    public Bitmap getBitmap(){
+        return bitmap;
+    }
 
     public String getDescription() {
         return description;

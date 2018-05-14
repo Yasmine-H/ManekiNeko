@@ -20,12 +20,12 @@ import java.util.Arrays;
  * Custom ListAdapter for printing a List of meals in a ListView
  */
 
-public class MealListAdapter extends ArrayAdapter {
+public class MealListAdapter2 extends ArrayAdapter {
 
     private final Activity context;
     private final ArrayList<Meal> meals;
 
-    public MealListAdapter(Activity context, ArrayList<Meal> meals){
+    public MealListAdapter2(Activity context, ArrayList<Meal> meals){
         super(context, R.layout.meal_list, meals);
         this.context = context;
         this.meals = meals;
@@ -37,10 +37,10 @@ public class MealListAdapter extends ArrayAdapter {
 
         if(meals.get(position)!=null)
         {
-            TextView txtTitle = (TextView) rowView.findViewById(R.id.mealName);
-            ImageView imageView = (ImageView) rowView.findViewById(R.id.mealPhoto);
-            TextView extratxt = (TextView) rowView.findViewById(R.id.mealDescription);
-            TextView pricetxt = rowView.findViewById(R.id.mealPrice);
+            TextView txtTitle = (TextView) rowView.findViewById(R.id.meal_name);
+            ImageView imageView = (ImageView) rowView.findViewById(R.id.meal_image);
+            TextView extratxt = (TextView) rowView.findViewById(R.id.meal_description);
+            TextView pricetxt = rowView.findViewById(R.id.meal_price);
             //TextView tagstxt = rowView.findViewById(R.id.mealTags);
 
             //add the photo

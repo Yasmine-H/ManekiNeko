@@ -1,5 +1,9 @@
 package com.ihm.androide.upmc.manekineko.database;
 
+import android.app.Application;
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -23,13 +27,14 @@ public class MealsLoader {
     RequestInterface requestInterface;
     ArrayList<Meal> meals;
     boolean done;
+    Context context;
 
 
 
 
 
 
-    public MealsLoader(){
+    public MealsLoader(Context context){
         gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -46,6 +51,7 @@ public class MealsLoader {
         */
         requestInterface = retrofit.create(RequestInterface.class);
         meals = null;
+        this.context=context;
     }
 
 
@@ -170,19 +176,39 @@ public class MealsLoader {
                     else {
                         Log.d(getClass().getName(),"\nnumber of results : "+meals.size());
                         for (Meal meal : meals) {
-                            Log.d(getClass().getName(),"\nmeal : " + meal.getName()+" type : "+meal.getType());
+                            String[] photo = meal.getPhoto().split("\\\\");
+                            if(photo.length == 2)
+                            {
+                                Log.d(getClass().getName(),"\nmeal : " + meal.getName()+" type : "+meal.getType()+" titre : 0 : "+photo[0]+" 1 :"+photo[1]);
+                            }
+                            else
+                            {
+                                Log.d(getClass().getName(),"\n!!!!!!!!!meal : " + meal.getName()+" type : "+meal.getType()+" titre : 0 : "+photo[0]);
+                            }
+                            /*
+
+                            String[] photo = meals.get(0).getPhoto().split("\\\\");
+
+                            Resources resources = context.getResources();
+                            final int resourceId = resources.getIdentifier(photo[1], photo[0],
+                                    context.getPackageName());
+
+                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                                Drawable drawable =context.getDrawable(resourceId);
+                                meal.setDrawable(drawable);
+                            }
+
+                            */
+
+                            //meal.setBmp();
+                            //imageView.setImageResource(resourceId);
                         }
 
 
                         /*ImageView imageView = findViewById(R.id.imageView);
-                        String[] photo = meals.get(0).getPhoto().split("\\\\");
-
-                        userInfoView.append("\n"+photo);
-                        Resources resources = getBaseContext().getResources();
-                        final int resourceId = resources.getIdentifier(photo[1], photo[0],
-                                getBaseContext().getPackageName());
-                        imageView.setImageResource(resourceId);
                         */
+
+
                     }
 
                 }

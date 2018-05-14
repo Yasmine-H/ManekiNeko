@@ -1,6 +1,7 @@
 package com.ihm.androide.upmc.manekineko.database;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,18 +20,22 @@ public class User implements Serializable{
     private String new_password;
     private String photo;
     private Map<Meal, Integer> favoriteMeals;
+    private ArrayList<Meal> order;
 
 
     public User(){
         name = "";
         email = "";
+        order=new ArrayList<>();
     }
 
     public User(String name){
+        this();
         this.name=name;
     }
 
     public User(String name, String email){
+        this();
         this.name=name;
         this.email=email;
     }
@@ -83,6 +88,21 @@ public class User implements Serializable{
         favoriteMeals.put(meal, stars);
     }
 
+    public void addMealToOrderList(Meal meal){
+        order.add(meal);
+    }
+
+    public void removeMealFromOrderList(String name){
+        int i;
+        for(i=0; i<order.size(); i++){
+            if(order.get(i).getName().equals(name)){
+             break;
+            }
+        }
+        if(i<order.size()){
+            order.remove(i);
+        }
+    }
     /*
     public boolean checkUserValidity(){
         if(username != null && username.length()>=3){

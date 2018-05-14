@@ -3,29 +3,17 @@ package com.ihm.androide.upmc.manekineko.design;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.ihm.androide.upmc.manekineko.R;
-import com.ihm.androide.upmc.manekineko.database.Constants;
 import com.ihm.androide.upmc.manekineko.database.Meal;
-import com.ihm.androide.upmc.manekineko.database.MealListAdapter;
+import com.ihm.androide.upmc.manekineko.database.MealListAdapter2;
 import com.ihm.androide.upmc.manekineko.database.MealResultCallback;
 import com.ihm.androide.upmc.manekineko.database.MealsLoader;
-import com.ihm.androide.upmc.manekineko.database.RequestInterface;
-import com.ihm.androide.upmc.manekineko.database.ServerTagResponse;
 
 import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /*
  Test Activity that loads the appetizers from the database and shows them on the app
@@ -50,7 +38,7 @@ public class AppetizerActivity extends AppCompatActivity {
         context = this;
 
         userInfoView.setText("Loading data...");
-        MealsLoader mealsLoader = new MealsLoader();
+        MealsLoader mealsLoader = new MealsLoader(context);
         mealsLoader.askForAppetizerList(new MealResultCallback() {
         //mealsLoader.askForDessertList(new MealResultCallback() {
             @Override
@@ -63,7 +51,7 @@ public class AppetizerActivity extends AppCompatActivity {
                         //userInfoView.append("\nMeal >>>> " + meal.getName());
                     }
                     mealsList = meals;
-                    MealListAdapter adapter=new MealListAdapter(context, meals);
+                    MealListAdapter2 adapter=new MealListAdapter2(context, meals);
                     mealList=(ListView)findViewById(R.id.mealList);
                     mealList.setAdapter(adapter);
 
