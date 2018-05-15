@@ -31,6 +31,7 @@ public class MealViewHolder2 extends RecyclerView.ViewHolder {
         //private ArrayList<>
 
         private Meal currentMeal;
+        MealRemoved mealRemoved;
 
         public MealViewHolder2(final View itemView) {
             super(itemView);

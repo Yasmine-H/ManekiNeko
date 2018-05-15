@@ -40,113 +40,12 @@ public class UserConnectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_connection);
         userInfoView = findViewById(R.id.information);
 
+
+
         userInfoView.setText(getString(R.string.welcomeText));
     }
 
-    /*
-    public void fetchMeals(View view) {
-        userInfoView.setText("Loading data...");
-        MealsLoader mealsLoader = new MealsLoader();
-        mealsLoader.askForAppetizerList(new MealResultCallback() {
-            @Override
-            public void onSuccess(ArrayList<Meal> meals) {
-                if (meals == null) {
-                    userInfoView.setText("Error Loading data");
-                } else{
-                    userInfoView.setText("Data successfully loaded !");
-                    for (Meal meal : meals) {
-                        userInfoView.append("\nMeal >>>> " + meal.getName());
-                    }
-                }
 
-
-            }
-
-            @Override
-            public void onError(Throwable throwable) {
-                userInfoView.setText(throwable.getLocalizedMessage());
-            }
-        });
-
-/*
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-
-        /*Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        * /
-        RequestInterface requestInterface = retrofit.create(RequestInterface.class);
-
-        //ServerMealRequest request = new ServerMealRequest();
-        //request.setUser(null);
-        //request.setMeal(new Meal("Sake", null, null));
-        //request.setOperation(Constants.FETCH_MEALS_OF_TYPE_OPERATION);
-
-        //Call<ServerMealResponse> response = requestInterface.fetchAllMeals(Constants.FETCH_MEALS_OPERATION);
-        Call<ServerMealResponse> response = requestInterface.fetchMealsOfType(Constants.FETCH_MEALS_OF_TYPE_OPERATION, "apéritif");
-        userInfoView.setText("Loading registration...");
-        response.enqueue(new Callback<ServerMealResponse>() {
-            @Override
-            public void onResponse(Call<ServerMealResponse> call, retrofit2.Response<ServerMealResponse> response) {
-
-                ServerMealResponse resp = response.body();
-                userInfoView.setText(resp.getMessage()+" and value : ");
-
-                if(resp != null)
-                {
-                    userInfoView.setText(resp.getMessage());//+resp.getMeals().size());
-                    meals = resp.getMeals();
-                    if(meals == null){
-                        userInfoView.append("\nnull returned");
-                    }
-                    else {
-                        userInfoView.append("\nnumber of results : "+meals.size());
-                        for (Meal meal : meals) {
-                            userInfoView.append("\nmeal : " + meal.getName()+" type : "+meal.getType());
-                        }
-                        ImageView imageView = findViewById(R.id.imageView);
-                        String[] photo = meals.get(0).getPhoto().split("\\\\");
-
-                        userInfoView.append("\n"+photo);
-                        Resources resources = getBaseContext().getResources();
-                        final int resourceId = resources.getIdentifier(photo[1], photo[0],
-                                getBaseContext().getPackageName());
-                        imageView.setImageResource(resourceId);
-                    }
-
-                }
-
-                else
-                {
-                    userInfoView.setText("resp is null");
-                }
-                //Snackbar.make(getView(), , Snackbar.LENGTH_LONG).show();
-                //progress.setVisibility(View.INVISIBLE);
-
-            }
-
-            @Override
-            public void onFailure(Call<ServerMealResponse> call, Throwable t) {
-
-                //progress.setVisibility(View.INVISIBLE);
-                Log.d(Constants.TAG,"failed");
-                t.printStackTrace();
-                userInfoView.setText(t.getLocalizedMessage());
-                //Snackbar.make(getView(), t.getLocalizedMessage(), Snackbar.LENGTH_LONG).show();
-
-            }
-        });
-
-    }
-*/
     private void registerProcess(String name, final String email, String password){
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -177,6 +76,7 @@ public class UserConnectionActivity extends AppCompatActivity {
                     if(resp.getResult().equals(Constants.SUCCESS))
                     {
                         connect(user);
+                        Log.d(getClass().getName(), user.getName()+"---------------");
                     }
                     else
                     {
@@ -229,9 +129,21 @@ public class UserConnectionActivity extends AppCompatActivity {
     }
 
     private void connect(User user) {
+
+        EditText username_edit = findViewById(R.id.username);
+        username_edit.setText("");
+
+        EditText password_edit = findViewById(R.id.password);
+        password_edit.setText("");
+
+
+        EditText email_edit = findViewById(R.id.email);
+        email_edit.setText("");
+
         Intent myIntent = new Intent(UserConnectionActivity.this, OrderActivity.class);
         myIntent.putExtra("user", user); //Optional parameters
         UserConnectionActivity.this.startActivity(myIntent);
+
         //userInfoView.setText(user.toString());
     }
 
@@ -371,5 +283,19 @@ public class UserConnectionActivity extends AppCompatActivity {
             connect(new User(username));
         }
 
+    }
+
+    @Override
+    protected void onResume() {
+        EditText username_edit = findViewById(R.id.username);
+        username_edit.clearComposingText();
+
+        EditText password_edit = findViewById(R.id.password);
+        password_edit.clearComposingText();
+
+
+        EditText email_edit = findViewById(R.id.email);
+        email_edit.clearComposingText();
+        super.onResume();
     }
 }

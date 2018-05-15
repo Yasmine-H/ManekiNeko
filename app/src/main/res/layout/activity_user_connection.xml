@@ -39,24 +39,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/information"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/rounded_corner"
-                    android:fontFamily="cursive"
-                    android:text="@string/welcomeText"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/text_margin"
-                    android:textStyle="bold" />
-
-                <android.support.v4.widget.Space
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp" />
-
                 <TextView
                     android:id="@+id/nounApplication"
                     android:layout_width="wrap_content"
@@ -73,6 +55,27 @@
                     android:textIsSelectable="false"
                     android:textSize="70dp"
                     tools:drawableEnd="@color/colorAccent" />
+
+
+                <android.support.v4.widget.Space
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp" />
+
+                <TextView
+                    android:id="@+id/information"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="cursive"
+                    android:text="@string/welcomeText"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_margin"
+                    android:textStyle="bold" />
+                <android.support.v4.widget.Space
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -92,7 +95,8 @@
                         android:gravity="center"
                         android:hint="email"
                         android:inputType="textEmailAddress"
-                        android:onClick="showEmailMessage" />
+                        android:onClick="showEmailMessage"
+                        android:paddingEnd="5dp"/>
 
                     <Space
                         android:layout_width="match_parent"
@@ -109,6 +113,7 @@
                         android:ems="10"
                         android:gravity="center"
                         android:hint="mot de passe"
+                        android:paddingEnd="5dp"
                         android:inputType="textPassword"
                         android:onClick="showPasswordMessage" />
 
@@ -118,10 +123,10 @@
 
                     <Button
                         android:id="@+id/login"
-                        android:layout_width="match_parent"
+                        android:layout_width="300dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/text_margin"
-                        android:layout_marginRight="@dimen/text_margin"
                         android:backgroundTint="@color/colorPrimary"
                         android:onClick="login"
                         android:text="Se connecter"
@@ -142,7 +147,8 @@
                     android:gravity="center"
                     android:hint="pseudo"
                     android:inputType="textPersonName"
-                    android:onClick="showUsernameMessage" />
+                    android:onClick="showUsernameMessage"
+                    android:paddingEnd="5dp"/>
 
 
                 <LinearLayout
@@ -153,24 +159,27 @@
 
                     <Button
                         android:id="@+id/registerButton"
-                        android:layout_width="match_parent"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/text_margin"
                         android:layout_marginRight="@dimen/text_margin"
                         android:backgroundTint="@color/colorPrimary"
                         android:onClick="newUser"
                         android:text="Creer un compte"
-                        android:textColor="@color/colorWhite" />
+                        android:textColor="@color/colorWhite"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
 
                     <Button
                         android:id="@+id/pass"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/text_margin"
                         android:layout_marginRight="@dimen/text_margin"
+                        android:layout_gravity="center"
                         android:backgroundTint="@color/colorPrimary"
                         android:onClick="pass"
-                        android:text="Passer"
+                        android:text="Passer (pseudo obligatoire)"
                         android:textColor="@color/colorWhite" />
                 </LinearLayout>
 

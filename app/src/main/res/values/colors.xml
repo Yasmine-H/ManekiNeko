@@ -14,4 +14,5 @@
     <color name="colorTag">#b3ffffff</color>
     <color name="white_opaque">#FFFFFFFF</color>
     <color name="dark_filter">#b6000000</color>
+    <color name="colorGrey">#d5a3a3a3</color>
 </resources>

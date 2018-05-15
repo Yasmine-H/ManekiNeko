@@ -34,11 +34,11 @@ public class OrderActivity extends AppCompatActivity {
     ArrayList<Meal> mealsList;
     Activity context;
  //   Spinner mealTypesSpinner;
- static User user;
+    static User user;
     ArrayList<Meal> orderList;
     ListView categoryListView;
     ImageButton cart_button;
-
+    public static final int UPDATED_USER = 1;
 
 
     @Override
@@ -214,8 +214,17 @@ public class OrderActivity extends AppCompatActivity {
     public void displayCart(View view){
         Intent myIntent = new Intent(OrderActivity.this, CartActivity.class);
         myIntent.putExtra("user", user); //Optional parameters
-        OrderActivity.this.startActivity(myIntent);
+        OrderActivity.this.startActivityForResult(myIntent, UPDATED_USER);
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case UPDATED_USER : user = (User) data.getSerializableExtra("user");
+            Log.d(getClass().getName(), "user : "+user.getName());
+            break;
+        }
+    }
 }

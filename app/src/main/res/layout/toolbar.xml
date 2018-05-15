@@ -45,13 +45,22 @@
             android:layout_alignParentEnd="true">
 
             <ImageButton
+                android:id="@+id/waiter_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:backgroundTint="@color/colorPrimary"
+                android:paddingRight="20dp"
+                android:src="@mipmap/ic_icons_waiter" />
+
+            <ImageButton
                 android:id="@+id/notebook_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:backgroundTint="@color/colorPrimary"
                 android:onClick="displayCart"
-                android:src="@drawable/icons_notebook" />
+                android:src="@drawable/ic_icons_notebook3" />
 
 
 

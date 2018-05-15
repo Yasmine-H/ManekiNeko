@@ -51,7 +51,12 @@ public class AppetizerActivity extends AppCompatActivity {
                         //userInfoView.append("\nMeal >>>> " + meal.getName());
                     }
                     mealsList = meals;
-                    MealListAdapter2 adapter=new MealListAdapter2(context, meals);
+                    MealListAdapter2 adapter=new MealListAdapter2(context, meals, new MealRemoved() {
+                        @Override
+                        public void onRemove(Meal meal) {
+
+                        }
+                    });
                     mealList=(ListView)findViewById(R.id.mealList);
                     mealList.setAdapter(adapter);
 

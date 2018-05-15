@@ -4,25 +4,15 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_all_users">AllUsersActivity</string>
-    <string name="welcomeText">Okaidinasai !
-        \nEnter your info to login/create an account and get personalized content (history, your own data...)</string>
-    <string name="usernameText">Enter a username to create a new account or just have a personalized name around the table (pass)</string>
-    <string name="passwordText">Enter your password to login or create a new account</string>
-    <string name="emailText">Enter your email to login to your account or create one</string>
-    <string name="missingInfo_Title">Missing info</string>
-    <string name="loginText">You must specify an email and password to login to your account</string>
-    <string name="registerText">You must specify an email, password and username to create a new account</string>
-    <string name="passText">You must specify a username to pass</string>
+    <string name="welcomeText">Irasshamasei !
+        \nEntrez votre email et mot de passe pour vous connecter</string>
+    <string name="usernameText">Entrez un pseudo pour créer un nouveau compte ou passer cette étape</string>
+    <string name="passwordText">Entrez votre mot de passe pour vous connecter ou créer un nouveau compte</string>
+    <string name="emailText">Entrez votre email pour vous connecter ou créer un nouveau compte</string>
+    <string name="missingInfo_Title">Il manque des informations ! </string>
+    <string name="loginText">Vous devez spécifier votre email et mot de passe pour vous connecter</string>
+    <string name="registerText">vVous devez spécifier un email, mot de passe et pseudo pour créer un nouveau compte</string>
+    <string name="passText">Vous devez entrer un pseudo pour passer</string>
 
 
-    <string-array name="meals_arrays">
-        <item>Appetizer</item>
-        <item>United States</item>
-        <item>Indonesia</item>
-        <item>France</item>
-        <item>Italy</item>
-        <item>Singapore</item>
-        <item>New Zealand</item>
-        <item>India</item>
-    </string-array>
 </resources>

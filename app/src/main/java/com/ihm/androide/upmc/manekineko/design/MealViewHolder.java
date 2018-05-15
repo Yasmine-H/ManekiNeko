@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ihm.androide.upmc.manekineko.R;
 import com.ihm.androide.upmc.manekineko.database.Constants;
@@ -62,6 +63,9 @@ public class MealViewHolder extends RecyclerView.ViewHolder {
             public void onClick(View v) {
                 OrderActivity.addToOrderList(currentMeal);
 
+                Toast.makeText(itemView.getContext(), new StringBuilder().append(currentMeal.getName()).append(" a bien été ajouté à votre carnet !").toString(),
+                        Toast.LENGTH_LONG).show();
+
             }
         });
     }
@@ -92,48 +96,10 @@ public class MealViewHolder extends RecyclerView.ViewHolder {
                         Log.d(getClass().getName(), " id ::::: " + resourceId);
 
 
-                            /*
-
-                            int imageId = getResources().getIdentifier(panel.toLowerCase(Locale.getDefault()),
-                                    "drawable", getActivity().getPackageName());
-
-                            InputStream is = getActivity().getResources().openRawResource(imageId);
-                            final Bitmap imageBitmap = BitmapFactory.decodeStream(is);
-                            rootView.post( new Runnable() {
-                                public void run() {
-                                    ((ImageView) rootView.findViewById(R.id.screen_image)).setImageBitmap(imageBitmap);
-                                    getActivity().setTitle(panel);
-                                }
-
-
-                            });
-                        */
-
-
-                        //Resources resources = itemView.getResources();
-/*
-                    try {
-
-                        final int resourceId = R.drawable.class.getField(photo[0]).getInt(null);
-                        Log.d(getClass().getName(), "id : "+resourceId);
-                        img.setImageResource(resourceId);
-
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    } catch (NoSuchFieldException e) {
-                        e.printStackTrace();
-                    }
-*/
-
                     }
                 }
 
                 img.setImageBitmap(meal.getBitmap());
-                //img.setImageBitmap(meal.getBmp());
-                //add Meal title
-
-                //img.setImageDrawable(meal.getDrawable());
-                //Log.d(getClass().getName(), ">>>>>>>>>>>>>>>>>>>>>>>>>>>"+meal.getDrawable());
                 String price_value = String.valueOf(meal.getPrice())+" €";
                 price.setText(price_value);
                 description.setText(meal.getDescription());

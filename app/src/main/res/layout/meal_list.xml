@@ -116,6 +116,7 @@ android:orientation="vertical"
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:textColor="@color/colorWhite"
+
             android:paddingTop="5dp"
             android:text="hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"/>
 
