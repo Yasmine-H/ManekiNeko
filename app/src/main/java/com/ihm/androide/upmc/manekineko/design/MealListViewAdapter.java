@@ -1,8 +1,7 @@
-package com.ihm.androide.upmc.manekineko.database;
+package com.ihm.androide.upmc.manekineko.design;
 
 import android.app.Activity;
 import android.content.res.Resources;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,25 +12,23 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ihm.androide.upmc.manekineko.R;
-import com.ihm.androide.upmc.manekineko.design.CartActivity;
+import com.ihm.androide.upmc.manekineko.database.Meal;
 import com.ihm.androide.upmc.manekineko.design.MealRemoved;
-import com.ihm.androide.upmc.manekineko.design.OrderActivity;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Custom ListAdapter for printing a List of meals in a ListView
  */
 
-public class MealListAdapter2 extends ArrayAdapter {
+public class MealListViewAdapter extends ArrayAdapter {
 
     private final Activity context;
     private final ArrayList<Meal> meals;
     MealRemoved mealRemoved;
 
-    public MealListAdapter2(Activity context, ArrayList<Meal> meals, MealRemoved mealRemoved){
+    public MealListViewAdapter(Activity context, ArrayList<Meal> meals, MealRemoved mealRemoved){
         super(context, R.layout.meal_list, meals);
         this.context = context;
         this.meals = meals;

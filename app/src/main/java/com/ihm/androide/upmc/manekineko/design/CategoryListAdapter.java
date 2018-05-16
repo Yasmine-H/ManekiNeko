@@ -2,9 +2,7 @@ package com.ihm.androide.upmc.manekineko.design;
 
 import android.app.Activity;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SnapHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,7 +49,7 @@ public class CategoryListAdapter extends ArrayAdapter {
         final RecyclerView rv = rowView.findViewById(R.id.meal_list);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(rowView.getContext(), LinearLayoutManager.HORIZONTAL, false);//LinearLayoutManager.HORIZONTAL, false);
         rv.setLayoutManager(layoutManager);
-        rv.setAdapter(new MealListAdapter(mealList));
+        rv.setAdapter(new MealListRecyclerViewAdapter(mealList));
 
         //rv.setNestedScrollingEnabled(false);
 

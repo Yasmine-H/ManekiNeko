@@ -8,7 +8,7 @@
     android:background="@drawable/okonomiyaki_hd222"
     android:backgroundTintMode="src_atop"
     android:backgroundTint="@color/dark_filter"
-    tools:context="com.ihm.androide.upmc.manekineko.database.UserConnectionActivity">
+    tools:context="com.ihm.androide.upmc.manekineko.design.UserConnectionActivity">
 
     <ScrollView
         android:layout_width="match_parent"

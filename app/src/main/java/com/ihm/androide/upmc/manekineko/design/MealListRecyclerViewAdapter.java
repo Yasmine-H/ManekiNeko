@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MealListAdapter extends RecyclerView.Adapter<MealViewHolder> {
+public class MealListRecyclerViewAdapter extends RecyclerView.Adapter<MealViewHolder> {
 
     private final List<Meal> meals;
 
-    public MealListAdapter(ArrayList<Meal> meals){
+    public MealListRecyclerViewAdapter(ArrayList<Meal> meals){
         super();
         this.meals=meals;
     }

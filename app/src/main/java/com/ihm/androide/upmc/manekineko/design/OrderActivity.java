@@ -18,7 +18,6 @@ import com.ihm.androide.upmc.manekineko.database.Meal;
 import com.ihm.androide.upmc.manekineko.database.MealResultCallback;
 import com.ihm.androide.upmc.manekineko.database.MealsLoader;
 import com.ihm.androide.upmc.manekineko.database.User;
-import com.ihm.androide.upmc.manekineko.database.UserConnectionActivity;
 
 import java.util.ArrayList;
 
@@ -132,7 +131,7 @@ public class OrderActivity extends AppCompatActivity {
                         //userInfoView.append("\nMeal >>>> " + meal.getName());
                     }
                     mealsList = meals;
-                    MealListAdapter2 adapter = new MealListAdapter2(context, meals);
+                    MealListViewAdapter adapter = new MealListViewAdapter(context, meals);
                     mealList = (ListView) findViewById(R.id.mealList);
                     mealList.setAdapter(adapter);
                     */
@@ -163,7 +162,7 @@ public class OrderActivity extends AppCompatActivity {
                         if(meals!=null)
                         {
                             mealsList = meals;
-                            MealListAdapter2 adapter = new MealListAdapter2(context, meals);
+                            MealListViewAdapter adapter = new MealListViewAdapter(context, meals);
                             mealList = (ListView) findViewById(R.id.mealList);
                             mealList.setAdapter(adapter);
                         }

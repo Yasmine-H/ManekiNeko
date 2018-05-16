@@ -2,28 +2,19 @@ package com.ihm.androide.upmc.manekineko.design;
 
 import android.app.AlertDialog;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.StrictMode;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ihm.androide.upmc.manekineko.R;
-import com.ihm.androide.upmc.manekineko.database.Constants;
 import com.ihm.androide.upmc.manekineko.database.Meal;
-
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Locale;
 
 
 public class MealViewHolder extends RecyclerView.ViewHolder {

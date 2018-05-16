@@ -1,8 +1,7 @@
-package com.ihm.androide.upmc.manekineko.database;
+package com.ihm.androide.upmc.manekineko.design;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -10,16 +9,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.ihm.androide.upmc.manekineko.R;
-import com.ihm.androide.upmc.manekineko.design.OrderActivity;
+import com.ihm.androide.upmc.manekineko.database.Constants;
+import com.ihm.androide.upmc.manekineko.database.Meal;
+import com.ihm.androide.upmc.manekineko.database.RequestInterface;
+import com.ihm.androide.upmc.manekineko.database.ServerUserRequest;
+import com.ihm.androide.upmc.manekineko.database.ServerUserResponse;
+import com.ihm.androide.upmc.manekineko.database.User;
 
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import retrofit2.Call;

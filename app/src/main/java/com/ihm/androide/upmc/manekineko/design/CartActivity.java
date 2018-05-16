@@ -14,10 +14,7 @@ import android.widget.TextView;
 
 import com.ihm.androide.upmc.manekineko.R;
 import com.ihm.androide.upmc.manekineko.database.Meal;
-import com.ihm.androide.upmc.manekineko.database.MealListAdapter2;
 import com.ihm.androide.upmc.manekineko.database.User;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -67,7 +64,7 @@ public class CartActivity extends AppCompatActivity implements MealRemoved{
             order_info.setText("Prix total : "+String.valueOf(price)+" €");
         }
 
-        MealListAdapter2 adapter = new MealListAdapter2(this, meals_list, new MealRemoved() {
+        MealListViewAdapter adapter = new MealListViewAdapter(this, meals_list, new MealRemoved() {
             @Override
             public void onRemove(Meal meal) {
                 removeFromOrderList(meal);
