@@ -17,10 +17,7 @@ public interface RequestInterface {
     //@POST("ManekiNeko/")
     Call<ServerUserResponse> operation(@Body ServerUserRequest request);
 
-    /*@POST("meals/")
-        //@POST("ManekiNeko/")
-    Call<ServerMealResponse> operation(@Body ServerMealRequest request);
-    */
+
     @GET("meals/")
         //@POST("ManekiNeko/")
     Call<ServerMealResponse> fetchAllMeals(@Query("method") String method);
@@ -29,11 +26,5 @@ public interface RequestInterface {
         //@POST("ManekiNeko/")
     Call<ServerMealResponse> fetchMealsOfType(@Query("method") String method,
                                 @Query("type") String type);
-    @GET("meals/")
-    Call<ServerTagResponse> fetchAllTags(@Query("method") String method);
-/*
-    @GET("meals/")
-        //@POST("ManekiNeko/")
-    Call<ServerUserResponse> operation();
-*/
+
 }

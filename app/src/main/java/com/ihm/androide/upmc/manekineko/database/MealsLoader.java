@@ -240,15 +240,5 @@ public class MealsLoader {
         });
 
     }
-    /*
-    private void saveMeals(ArrayList<Meal> meals) {
-        this.meals = meals;
-        done = true;
-    }
 
-    private void errorMsg(String aNull) {
-        meals=null;
-        done = true;
-    }
-    */
 }

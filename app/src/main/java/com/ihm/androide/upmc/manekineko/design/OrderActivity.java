@@ -74,23 +74,6 @@ public class OrderActivity extends AppCompatActivity {
         TextView username_view = findViewById(R.id.username);
         username_view.setText(user.getName());
 
-//        userInfoView.setText(user.getName());
-/*
-        ArrayList<String> mealTypes = new ArrayList<>();
-        mealTypes.add(Constants.appetizer);
-        mealTypes.add(Constants.drink);
-        mealTypes.add(Constants.firstCourse);
-        mealTypes.add(Constants.mainCourse);
-        mealTypes.add(Constants.dessert);
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, mealTypes);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        mealTypesSpinner.setAdapter(dataAdapter);
-*/
-
-        //userInfoView.setText("Loading data...");
         runOnUiThread(new Runnable() {
 
             @Override
@@ -125,16 +108,7 @@ public class OrderActivity extends AppCompatActivity {
                             CategoryListAdapter adapter = new CategoryListAdapter(context, category_meals_list);
                             categoryListView = findViewById(R.id.category_list);
                             categoryListView.setAdapter(adapter);
-                    /*
-                    //userInfoView.append("Data successfully loaded !");
-                    for (Meal meal : meals) {
-                        //userInfoView.append("\nMeal >>>> " + meal.getName());
-                    }
-                    mealsList = meals;
-                    MealListViewAdapter adapter = new MealListViewAdapter(context, meals);
-                    mealList = (ListView) findViewById(R.id.mealList);
-                    mealList.setAdapter(adapter);
-                    */
+
                         }
 
 
@@ -151,39 +125,6 @@ public class OrderActivity extends AppCompatActivity {
         });
 
     }
-/*
-        mealTypesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedMealType = (String) parent.getItemAtPosition(position);
-                mealsLoader.askForMealsOfType(selectedMealType, new MealResultCallback() {
-                    @Override
-                    public void onSuccess(ArrayList<Meal> meals) {
-                        if(meals!=null)
-                        {
-                            mealsList = meals;
-                            MealListViewAdapter adapter = new MealListViewAdapter(context, meals);
-                            mealList = (ListView) findViewById(R.id.mealList);
-                            mealList.setAdapter(adapter);
-                        }
-                    }
-
-                    @Override
-                    public void onError(Throwable throwable) {
-
-                    }
-                });
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-    }
-*/
-
 
 
     public static void addToOrderList(Meal meal) {
