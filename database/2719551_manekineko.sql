@@ -227,12 +227,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`sno`, `unique_id`, `name`, `email`, `encrypted_password`, `salt`, `created_at`) VALUES
 (1, '5ae628a41d9192.68705468', 'kali', 'a@a.com', '$2y$10$GQ112SOUsxX59Twwl4hz2uTT3K3AzTSpAo6fxOcxOLrmluNa.gUBK', '7f4343d653', '2018-04-29 22:18:44'),
-(2, '5ae628a43f4315.65807477', 'kali', 'a@a.com', '$2y$10$6QBfBC8pvkQ9dqd5xbvesOjWNKEmavRo1iVTU7Z6pIiWq/Mx6KfMm', 'd3485368c8', '2018-04-29 22:18:44'),
-(3, '5ae629699d53b6.73576956', 'moh', 'b@a.com', '$2y$10$ZRSCIk4xF0fUT5dlLOex2uHFl9kvQ/HdEWcUmfN1BVBCDygDBX6Qe', '25563ecd78', '2018-04-29 22:22:02'),
 (4, '5af36eb6361362.47273652', 'Jein', 'hamdaniyasmine15@gmail.com', '$2y$10$HdsdkkUxeiIOYitsalgYHOYYX7Ws6LJe.pv.aQq8SvtxFowzKndt.', 'aa8fb709f5', '2018-05-09 21:57:10'),
 (5, '5af36ff2e6c561.91619880', 'Yasmine', 'yasmine@gmail.com', '$2y$10$NlnvxGoFoIlFLsOPW.ExFuxeFtUX/VNSY.sDrYeDbQBMxELY0K3fO', 'ce26d17314', '2018-05-09 22:02:27'),
 (6, '5af371212c4816.79158236', 'Diaa', 'a@g.c', '$2y$10$1uu4vAH4reuyRPGiKHd3TutJCc8K1rjxBHsH0UM20TNOH9FlqKb9i', 'b1a4f7c395', '2018-05-09 22:07:29'),
-(7, '5af371b0f02595.78891597', 'Diaa', 'aa@g.c', '$2y$10$FtJittTZEXlsIo01XKrmrOTeRWF1hv31H6KVFXiU0cUPMKz67oqUi', 'ce8657a48f', '2018-05-09 22:09:53'),
 (8, '5af372c3566ac7.16699961', 'Zina', 'aaa@g.c', '$2y$10$BODSsno5tv7b5LYvrxeT3uUsEujCatqfktMmdgGcE8HMz1Giqrb0K', '929721c77b', '2018-05-09 22:14:27'),
 (9, '5af37d1f3c6457.96820229', 'Loki', 'h@h.c', '$2y$10$.cxh0oe2nI3dG3nKfhbHqe1Ry/GFzke7TRMNJkBDxDTYkUVr9ncqG', '0e0b0b65fa', '2018-05-09 22:58:39'),
 (10, '5af99f36003e42.07879775', 'Bouchra', 'douidibouchra@gmail.com', '$2y$10$k4VaOyegnIWOmzqLBJxffeJJxAP66.Y5rOoXvSnSf0m30jooHIdtu', '8474697913', '2018-05-14 14:37:42'),
